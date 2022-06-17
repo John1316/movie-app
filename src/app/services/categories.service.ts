@@ -18,9 +18,40 @@ export class CategoriesService {
     return this._HttpClient.get<Category[]>(`${environment.apiUrl}category`)
   }
 
+  // get category details
+  getCategorydetails(id:number): Observable<any>{
+    return this._HttpClient.get<Category[]>(`${environment.apiUrl}category/${id}`)
+  }
+
   // serach in all categories function
 
   getSearchBycategory(id:number): Observable<any>{
     return this._HttpClient.get<Category[]>(`${environment.apiUrl}moviesByCategory/${id}`)
   }
+    // create movies function
+    createCategory(
+      formData: string
+    ):Observable<any>{
+
+      return this._HttpClient.post<Category[]>(`${environment.apiUrl}category` , formData)
+    }
+
+      // update category function
+
+    updateCategory(
+      id:number,
+      formData: string
+
+
+    ):Observable<any>{
+
+
+      return this._HttpClient.post<Category[]>(`${environment.apiUrl}category/${id}` , formData     )
+    }
+
+    // delete movies function
+    deleteCategory(id:number , formData:string):Observable<any>{
+      return this._HttpClient.post<Category[]>(`${environment.apiUrl}category/${id}` , formData
+      )
+    }
 }

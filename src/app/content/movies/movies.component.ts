@@ -116,19 +116,22 @@ export class MoviesComponent implements OnInit {
   }
   // delete movies
   onDelete(id:number , data:any){
-    this.loadingAction = true
-    this._MoviesService.deleteMovie(id,data ).subscribe(
-      (response) => {
-        if (response.status === 'success') {
-          this.delete = 'Your movie deleted successfully';
-          this.error = '';
-          this.success = '';
-          this.loadingAction = false
+    if(confirm(`Are you sure to delete movie with id ${id}`)) {
 
-          this.showMovies();
+      this.loadingAction = true
+      this._MoviesService.deleteMovie(id,data ).subscribe(
+        (response) => {
+          if (response.status === 'success') {
+            this.delete = 'Your movie deleted successfully';
+            this.error = '';
+            this.success = '';
+            this.loadingAction = false
+
+            this.showMovies();
+          }
         }
-      }
-    )
+      )
+    }
   }
     // search by category validation
     searchByCategory = new FormGroup({

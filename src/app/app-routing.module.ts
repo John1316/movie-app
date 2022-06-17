@@ -4,6 +4,8 @@ import { LoginComponent } from './content/auth/login/login.component';
 import { RegisterComponent } from './content/auth/register/register.component';
 import { MoviesDetailsComponent } from './content/movies-details/movies-details.component';
 import { MoviesComponent } from './content/movies/movies.component';
+import { CategoryComponent } from './content/pages/category/category.component';
+import { EditCategoryComponent } from './content/pages/category/edit-category/edit-category.component';
 import { SearchbycategoryComponent } from './content/searchbycategory/searchbycategory.component';
 import { NotfoundComponent } from './content/shared/notfound/notfound.component';
 import { AuthGuard } from './guard/auth.guard';
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: '', redirectTo:'movies' ,pathMatch:'full'},
   {path: 'movies', canActivate:[AuthGuard] , component: MoviesComponent},
   {path: 'movie/:id', canActivate:[AuthGuard] , component: MoviesDetailsComponent},
+  {path: 'categories', canActivate:[AuthGuard] , component: CategoryComponent},
+  {path: 'category/:id', canActivate:[AuthGuard] , component: EditCategoryComponent},
   {path: 'searchByCategory/:id', canActivate:[AuthGuard] , component: SearchbycategoryComponent},
   {path: 'login',  component: LoginComponent},
   {path: 'register',  component: RegisterComponent},

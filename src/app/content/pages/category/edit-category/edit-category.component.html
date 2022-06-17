@@ -1,0 +1,41 @@
+
+
+
+<!-- api loader -->
+<div class="" *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<!-- action loader -->
+<div class="" *ngIf="loadingAction">
+  <app-action-loader></app-action-loader>
+</div>
+
+<!-- main content -->
+<div class="card card-content collapse show">
+  <div class="card-body">
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+    <div *ngIf="success" class="alert alert-success" role="alert">
+      {{success}}
+    </div>
+    <form [formGroup]="updateCategory" (ngSubmit)="onUpdate(updateCategory)">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" type="text" name="name" formControlName="name" [ngModel]="category?.name">
+            </div>
+          </div>
+
+              <input id="name" class="form-control" type="hidden" name="_method" formControlName="_method" [ngModel]="_method">
+
+
+
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="updateCategory.invalid">Save changes</button>
+    </form>
+  </div>
+</div>

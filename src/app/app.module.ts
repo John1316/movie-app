@@ -20,6 +20,8 @@ import { MoviesDetailsComponent } from './content/movies-details/movies-details.
 import { SearchbycategoryComponent } from './content/searchbycategory/searchbycategory.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CategoryComponent } from './content/pages/category/category.component';
+import { EditCategoryComponent } from './content/pages/category/edit-category/edit-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FooterComponent,
     LoadingComponent,
     MoviesDetailsComponent,
-    SearchbycategoryComponent
+    SearchbycategoryComponent,
+    CategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

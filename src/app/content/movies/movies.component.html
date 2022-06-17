@@ -13,11 +13,11 @@
 
   <div class="card-content collapse show">
     <div class="card-header bg-primary bg-darken-2 text-center align-items-center card-title-bold text-capitalize row no-gutters">
-      <div class="col-9">
+      <div class="col-md-9 col-6">
 
         <h3 class="mb-0 text-left">{{pageName}}</h3>
       </div>
-      <div class="col-3 text-right">
+      <div class="col-md-3 col-6 text-right">
 
 
           <button (click)="fullScreen()" *ngIf="!fullscreed" class="btn box-shadow-2 mx-2 btn-light"><i class="ficon ft-maximize"></i></button>
@@ -57,6 +57,7 @@
                         <button class="btn btn-outline-success" [disabled]="!searchByCategory.valid" type="submit">Search</button>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </form>
@@ -148,12 +149,18 @@
               <label for="name">Name</label>
               <input id="name" class="form-control" type="text" name="name" formControlName="name">
             </div>
+            <div *ngIf="createMovie.controls['name'].touched && createMovie.controls['name'].errors != null" id="email" class="alert mt-2 alert-danger" role="alert">
+              <p class="mb-0" *ngIf="createMovie.controls['name'].errors['required']">Name is required</p>
+            </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="icon">Image</label>
-              <input id="icon" (change)="image($event)" class="form-control" type="file" name="icon">
+              <label for="image">Image</label>
+              <input id="image" (change)="image($event)" class="form-control" type="file" name="image" formControlName="image">
+            </div>
+            <div *ngIf="createMovie.controls['image'].touched && createMovie.controls['image'].errors != null" id="image" class="alert mt-2 alert-danger" role="alert">
+              <p class="mb-0" *ngIf="createMovie.controls['image'].errors['required']">Image is required</p>
             </div>
           </div>
           <div class="col-md-12">
@@ -164,11 +171,17 @@
                 <option value="{{category.id}}" *ngFor="let category of categoryContainer">{{category.name}}</option>
               </select>
             </div>
+            <div *ngIf="createMovie.controls['category_id'].touched && createMovie.controls['category_id'].errors != null" id="category_id" class="alert mt-2 alert-danger" role="alert">
+              <p class="mb-0" *ngIf="createMovie.controls['category_id'].errors['required']">Category is required</p>
+            </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label for="description">Description</label>
               <textarea id="description" class="form-control" type="text" name="description" formControlName="description"></textarea>
+            </div>
+            <div *ngIf="createMovie.controls['description'].touched && createMovie.controls['description'].errors != null" id="description" class="alert mt-2 alert-danger" role="alert">
+              <p class="mb-0" *ngIf="createMovie.controls['description'].errors['required']">Description is required</p>
             </div>
           </div>
         </div>
