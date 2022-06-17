@@ -13,13 +13,19 @@ export class MoviesService {
     private _HttpClient:HttpClient,
 
   ) { }
+
+  // get all movies function
   getMovies() : Observable<any>{
 
     return this._HttpClient.get<movies[]>( `${environment.apiUrl}movies`    )
   }
+    // get movie detail function
+
   getMovieDetails(id:number): Observable<any>{
     return this._HttpClient.get<movies[]>(`${environment.apiUrl}movies/${id}`    )
   }
+
+  // create movies function
   createMovie(
     name: string,
     description: string,
@@ -34,6 +40,9 @@ export class MoviesService {
     formData.append('image',image);
     return this._HttpClient.post<movies[]>(`${environment.apiUrl}movies` , formData)
   }
+
+    // update movies function
+
   updateMovie(
     id:number,
     name: string,
@@ -54,6 +63,8 @@ export class MoviesService {
 
     return this._HttpClient.post<movies[]>(`${environment.apiUrl}movies/${id}` , formData     )
   }
+
+  // delete movies function
   deleteMovie(id:number , formData:string):Observable<any>{
     return this._HttpClient.post<movies[]>(`${environment.apiUrl}movies/${id}` , formData
     )

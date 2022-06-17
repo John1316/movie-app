@@ -13,7 +13,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./movies-details.component.scss']
 })
 export class MoviesDetailsComponent implements OnInit {
-
+// declarations
   success: string = '';
   error: string = '';
   movie!:movies;
@@ -35,6 +35,7 @@ export class MoviesDetailsComponent implements OnInit {
     this.getDetails();
     this.showCategories();
   }
+  // fetch categories
   showCategories(){
     this._CategoriesService.getAllCategories().subscribe(
       (response) => {
@@ -42,7 +43,9 @@ export class MoviesDetailsComponent implements OnInit {
       }
     )
   }
+  // get movie details
   getDetails(){
+    // get the activated number of details in the url to fetch the data
     this.indexForNumbers = this._ActivatedRoute.snapshot.params["id"];
     this.loading = true;
     this._MoviesService.getMovieDetails(this.indexForNumbers).subscribe(
@@ -57,7 +60,7 @@ export class MoviesDetailsComponent implements OnInit {
 
 
 
-
+// update movie validation
 
   updateMovie = new FormGroup({
     'name' : new FormControl('', Validators.required),
@@ -66,7 +69,7 @@ export class MoviesDetailsComponent implements OnInit {
     'image' : new FormControl(null),
     '_method' : new FormControl('', Validators.required),
   })
-
+// image function
   image(event:any){
     const file = event.target.files ? event.target.files[0] : '';
     this.updateMovie.patchValue({
@@ -76,7 +79,7 @@ export class MoviesDetailsComponent implements OnInit {
   }
 
 
-
+// on update submit
   onUpdate(){
     this._MoviesService.updateMovie(
       this.indexForNumbers,

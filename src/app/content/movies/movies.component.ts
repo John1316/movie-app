@@ -15,6 +15,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
+  // declarations
   pageName: string = 'Movies';
   success: string = '';
   error: string = '';
@@ -51,18 +52,15 @@ export class MoviesComponent implements OnInit {
     this._Title.setTitle(`Task | movies`)
 
   }
-
+  // create movie validation
   createMovie = new FormGroup({
     'name' : new FormControl('', Validators.required),
     'description' : new FormControl('', Validators.required),
     'category_id' : new FormControl('', Validators.required),
     'image' : new FormControl(null, Validators.required),
   })
-  searchByCategory = new FormGroup({
 
-    'category' : new FormControl('', Validators.required),
-  })
-
+  // image onchange
   image(event:any){
     const file = event.target.files ? event.target.files[0] : '';
     this.createMovie.patchValue({
@@ -70,12 +68,14 @@ export class MoviesComponent implements OnInit {
     })
     this.createMovie.get('image')?.updateValueAndValidity()
   }
+  // create movie
   openModal(template: any) {
     this.modalRef = this.modalService.show(template);
   }
   pageChanged(event:any){
     this.config.currentPage = event;
   }
+  // fetch movies
   showMovies(){
     this.loading = true
     this._MoviesService.getMovies().subscribe(
@@ -85,29 +85,9 @@ export class MoviesComponent implements OnInit {
       }
     )
   }
-  showCategories(){
-    this._CategoriesService.getAllCategories().subscribe(
-      (response) => {
-        this.categoryContainer = response.message
-      }
-    )
-  }
 
-  onDelete(id:number , data:any){
-    this.loadingAction = true
-    this._MoviesService.deleteMovie(id,data ).subscribe(
-      (response) => {
-        if (response.status === 'success') {
-          this.delete = 'Your movie deleted successfully';
-          this.error = '';
-          this.success = '';
-          this.loadingAction = false
 
-          this.showMovies();
-        }
-      }
-    )
-  }
+  // create movie
   onCreate(){
       this.loadingAction = true
 
@@ -134,6 +114,36 @@ export class MoviesComponent implements OnInit {
       }
     )
   }
+  // delete movies
+  onDelete(id:number , data:any){
+    this.loadingAction = true
+    this._MoviesService.deleteMovie(id,data ).subscribe(
+      (response) => {
+        if (response.status === 'success') {
+          this.delete = 'Your movie deleted successfully';
+          this.error = '';
+          this.success = '';
+          this.loadingAction = false
+
+          this.showMovies();
+        }
+      }
+    )
+  }
+    // search by category validation
+    searchByCategory = new FormGroup({
+
+      'category' : new FormControl('', Validators.required),
+    })
+    // fetch categories
+    showCategories(){
+      this._CategoriesService.getAllCategories().subscribe(
+        (response) => {
+          this.categoryContainer = response.message
+        }
+      )
+    }
+  // search function by category
   onSearch(searchByCategory:FormGroup){
 
     this._Router.navigateByUrl(`searchByCategory/${searchByCategory.value.category}`)

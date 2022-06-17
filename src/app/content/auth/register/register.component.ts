@@ -33,28 +33,31 @@ export class RegisterComponent implements OnInit {
     this._Title.setTitle(`Task | register`)
 
   }
+  // submit form
   submit(register:FormGroup){
+              // apply loader
+
     this.actionLoader = true
     this._AuthService.register(register.value).subscribe(
       (response) => {
+        // if status is success
         if (response.status === 'success') {
           //
           this.success = response.message
           setTimeout(() => {
             this._Router.navigate(['/login']);
           }, 2000);
+          // disable loader
           this.actionLoader = false;
         }
-        console.log(response);
-      }, error => {
-        if (error.status === 'error') {
+        // if status is failed
 
-          this.error = error.message
+        if (response.status === 'failed') {
+          this.error = response.message.email[0];
           this.actionLoader = false;
+          // disable loader
 
         }
-        console.log(error);
-
       }
     )
 

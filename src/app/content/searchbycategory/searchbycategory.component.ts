@@ -12,6 +12,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./searchbycategory.component.scss']
 })
 export class SearchbycategoryComponent implements OnInit {
+  // decalarations
   pageName:string = 'Search by category';
   fullscreed: boolean = false;
   loading: boolean = false;
@@ -35,6 +36,7 @@ export class SearchbycategoryComponent implements OnInit {
     this.getDetails();
     this.showCategories();
   }
+  // fetch all categories
   showCategories(){
     this._CategoriesService.getAllCategories().subscribe(
       (response) => {
@@ -42,7 +44,10 @@ export class SearchbycategoryComponent implements OnInit {
       }
     )
   }
+  // get all movies that related to category
   getDetails(){
+        // get the activated number of details in the url to fetch the data
+
     this.indexForNumbers = this._ActivatedRoute.snapshot.params["id"];
     this.loading = true;
     this._CategoriesService.getSearchBycategory(this.indexForNumbers).subscribe(

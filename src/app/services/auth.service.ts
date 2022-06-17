@@ -8,44 +8,37 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
+  // define cureent user data witch we will store and save the token
   currentUserData: any = new BehaviorSubject(null);
   constructor(private _HttpClient: HttpClient , private _Router:Router) {
+    // if localstorage have currentusertoken then go to function saveCurrentUserToken() and save it and make it
     if (localStorage.getItem('currentUserToken' || '{}')) {
       this.saveCurrentUserToken();
     }
   }
 
-
-
-
+  //save current user token get the encoded token in local storage and saves it untill it expires
   saveCurrentUserToken() {
+
     let encodedToken: any = localStorage.getItem('currentUserToken');
     this.currentUserData.next(encodedToken)
   }
 
-
+// login function
   login(formdata:string): Observable<any>{
     return this._HttpClient.post(`${environment.apiUrl}login`,formdata )
   }
+  // register function
+
   register(formdata:string): Observable<any>{
     return this._HttpClient.post(`${environment.apiUrl}register`,formdata )
   }
-  autoLogout(){
-    let encodedExpiresIn: any = localStorage.getItem('currentUserExpiresIn');
 
-    const ExpiresDate: any = new Date(encodedExpiresIn).getTime() - new Date().getTime();
-    if (ExpiresDate && (Date.now() > ExpiresDate)) {
-      this.signOut();
-      this._Router.navigate(['/login']);
-    }
-  }
-
+    // signOut function
 
   signOut(){
     this.currentUserData.next(null);
     localStorage.removeItem('currentUserToken');
-    localStorage.removeItem('currentUserExpiresIn');
-    localStorage.removeItem('currentUsername');
     this._Router.navigate(['/login']);
 
 

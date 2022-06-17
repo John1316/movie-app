@@ -1,11 +1,16 @@
 
+
+<!-- api loader -->
 <div class="" *ngIf="loading">
   <app-loading></app-loading>
 </div>
 
+<!-- action loader -->
 <div class="" *ngIf="loadingAction">
   <app-action-loader></app-action-loader>
 </div>
+
+<!-- main content -->
 <div class="card card-content collapse show">
   <div class="card-body">
     <div *ngIf="error" class="alert alert-danger" role="alert">
@@ -47,8 +52,10 @@
               <label for="category_id">Category</label>
               <select id="category_id" class="form-control" name="category_id" formControlName="category_id" [ngModel]="movie?.category_id" >
                 <option value="">Select Category</option>
+                        <!-- loop starts here -->
 
                 <option value="{{category.id}}" *ngFor="let category of categoryContainer">{{category.name}}</option>
+                        <!-- loop end here -->
 
               </select>
             </div>

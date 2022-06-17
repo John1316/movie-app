@@ -12,9 +12,9 @@
             <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Create Account</span>
             </h6>
           </div>
-          <div *ngIf="success" class="alert alert-success" role="alert">
-            {{success}}
-          </div>
+
+
+
           <div class="card-content">
 
             <div class="card-body">
@@ -49,6 +49,12 @@
                 <div *ngIf="register.controls['password'].touched && register.controls['password'].errors != null" id="password" class="alert mt-2 alert-danger" role="alert">
                   <p class="mb-0" *ngIf="register.controls['password'].errors['required']">Password is required</p>
                 </div>
+                <!-- success alert -->
+                <div *ngIf="success" class="alert alert-success" role="alert">
+                  <strong>{{success}}</strong>
+                </div>
+
+                <!-- error alert -->
                 <div *ngIf="error" class="alert alert-danger" role="alert">
                   <strong>{{error}}</strong>
                 </div>

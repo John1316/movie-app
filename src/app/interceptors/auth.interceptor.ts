@@ -19,12 +19,9 @@ export class AuthInterceptor implements HttpInterceptor {
     ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    // if(this._AuthService.currentUserData.getValue() != null){
-    //   request = request.clone({
-    //     setHeaders: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('currentUserToken') || '{}')}` }
-    //   });
-    // }
+    // define the token
     const currentUserToken = JSON.parse(localStorage.getItem('currentUserToken') || '{}');
+    // if the current data is not nul then clone the authorization + Bearer token
     if (this._AuthService.currentUserData.getValue() != null) {
       request = request.clone({
         setHeaders: {
@@ -32,7 +29,7 @@ export class AuthInterceptor implements HttpInterceptor {
         }
       });
     }
-
+    //  if the token expired and data is error with 401 then go to signout function to handle 401 error 
     return next.handle(request).pipe( tap(() => {},
       (err: any) => {
       if (err instanceof HttpErrorResponse) {
