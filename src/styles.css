@@ -1,0 +1,329 @@
+.text-primary {
+  color: #040404 !important;
+}
+
+.main-menu.menu-dark .navigation > li.active > a {
+  border-right: 4px solid #3a5563;
+  margin: 0 !important;
+}
+
+.login_box .card-title i {
+  font-size: 40px;
+}
+
+.gallery_modal img {
+  height: 500px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.btn-light:focus {
+  color: #040404 !important;
+}
+
+.card-header h3 {
+  color: #fff;
+}
+
+.card-header .btn-light {
+  color: #040404;
+}
+
+.bg-primary.bg-darken-2, .btn-primary.btn-darken-2 {
+  background-color: #3a5563 !important;
+}
+
+.navigation-main {
+  margin-top: 18px !important;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.slider h4 {
+  text-align: center;
+}
+
+.main_slider_img {
+  height: 200px !important;
+  width: 200px !important;
+  margin: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.home-dashboard h3 {
+  margin-bottom: 5px;
+}
+
+.home-dashboard h4 {
+  margin-bottom: 0;
+}
+
+.modal-title {
+  margin-bottom: 0 !important;
+}
+
+.btn-primary {
+  background-color: #3a5563 !important;
+  border-color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: #040404 !important;
+  border-color: #fff !important;
+}
+
+.btn-primary:focus {
+  background-color: #3a5563 !important;
+  border-color: #fff !important;
+}
+
+.image_card_home {
+  height: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: auto;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999999999;
+  background: #290707;
+}
+
+.loader .loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.main-logo-loader {
+  animation: flip-vertical-left 1s ease-in-out infinite alternate-reverse both;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #290707;
+}
+
+.preloader .loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.preloader .main-loader {
+  animation: flip-vertical-left 1s ease-in-out infinite alternate-reverse both;
+}
+
+.fullsizeModal {
+  max-width: 100%;
+  margin: 0 !important;
+  max-height: 100%;
+}
+
+body.vertical-layout.vertical-menu-modern .content {
+  position: relative;
+}
+
+.loading_data {
+  position: absolute;
+  inset: 0;
+  background-color: #f4f5fa;
+  z-index: 800;
+}
+
+.loading_data .lds-ring {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loading_data .lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #3a5563;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #3a5563 transparent transparent transparent;
+}
+
+.loading_data .lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.loading_data .lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.loading_data .lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+.header-navbar .navbar-header {
+  padding: 4px 14px;
+}
+
+.dropdown-user:hover {
+  position: relative;
+}
+
+.dropdown-user:hover .dropdown-menu-user {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  opacity: 1;
+  display: block;
+}
+
+.dropdown-menu-user {
+  position: absolute;
+}
+
+.action_minwidth {
+  min-width: 181px;
+}
+
+.action_slider {
+  padding: 1.6rem 0 !important;
+}
+
+.action_banner {
+  padding: 1.6rem 0 !important;
+}
+
+.action_loader {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(58, 85, 99, 0.6);
+  z-index: 99999;
+}
+
+.action_loader .lds-ring {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.action_loader .lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.action_loader .lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.action_loader .lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.action_loader .lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.ngx-pagination {
+  padding-left: 0;
+}
+
+.ngx-pagination .current {
+  background-color: #3a5563 !important;
+}
+
+.ngx-pagination a:hover {
+  color: #3a5563;
+}
+
+footer a {
+  color: #040404 !important;
+}
+
+.notfound {
+  min-height: 75vh;
+}
+
+@-webkit-keyframes flip-vertical-left {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes flip-vertical-left {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

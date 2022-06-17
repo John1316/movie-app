@@ -1,0 +1,80 @@
+
+<nav
+class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-dark navbar-shadow"
+>
+<div class="navbar-wrapper">
+  <div class="navbar-header">
+    <ul class="nav navbar-nav flex-row d-flex align-items-center" >
+      <li class="nav-item mobile-menu d-lg-none mr-auto" (click)="openMenu()" >
+        <a class="nav-link nav-menu-main menu-toggle hidden-xs"
+          ><i class="ft-menu font-large-1"></i
+        ></a>
+      </li>
+      <li class="nav-item mr-auto">
+        <a class="navbar-brand" routerLink="/movies" target="_blank"
+          ><img
+            class="brand-logo"
+            alt="Digital Bond"
+            src="assets/app-assets/images/logo/logo.png"
+          />
+          <h3 class="brand-text">Movies cave</h3></a
+        >
+      </li>
+
+      <li class="nav-item d-lg-none">
+        <a
+          class="nav-link open-navbar-container"
+          data-toggle="collapse"
+          data-target="#navbar-mobile"
+          ><i class="la la-ellipsis-v"></i
+        ></a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-container content" *ngIf="isLogined">
+    <div class="collapse navbar-collapse" id="navbar-mobile">
+      <ul class="nav navbar-nav mr-auto float-left" >
+        <li class="nav-item d-none d-lg-block nav-toggle" *ngIf="!isCollapsed" (click)="collpaseSidebar()">
+          <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"
+            ><i
+              class="toggle-icon ft-toggle-left font-medium-3"
+              data-ticon="ft-toggle-left"
+            ></i
+          ></a>
+        </li>
+        <li class="nav-item d-none d-lg-block nav-toggle" *ngIf="isCollapsed" (click)="openSidebar()">
+          <a class="nav-link modern-nav-toggle pr-0" data-toggle="expand"
+            ><i
+              class="toggle-icon ft-toggle-right font-medium-3"
+              data-ticon="ft-toggle-right"
+            ></i
+          ></a>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav float-right">
+        <li *ngIf="!isLogined" class="dropdown dropdown-user nav-item">
+          <p class="mb-0">You ar not logined</p>
+        </li>
+        <li *ngIf="isLogined" class="dropdown dropdown-user nav-item">
+          <a
+            class="dropdown-toggle nav-link dropdown-user-link"
+
+            data-toggle="dropdown"
+            ><span class="avatar avatar-online"
+              ><img
+                src="assets/images/avatar.png"
+                alt="avatar" /><i></i></span
+          ></a>
+          <div class="dropdown-menu dropdown-menu-user dropdown-menu-right">
+            <a  (click)="signOut()" class="dropdown-item"
+              ><i class="ft-power"></i> Logout</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</nav>
+<!-- END: Header-->

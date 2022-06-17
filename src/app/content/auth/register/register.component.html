@@ -1,0 +1,65 @@
+<div class="" *ngIf="actionLoader">
+    <app-action-loader></app-action-loader>
+  </div>
+  <section class="row navbar-flexbox-container">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <div class="col-lg-6 col-md-8 col-10 box-shadow-2 p-0">
+        <div class="card border-grey border-lighten-3 m-0">
+          <div class="card-header border-0">
+            <div class="card-title text-center">
+              <img src="assets/app-assets/images/logo/logo.png" width="100px" alt="branding logo">
+            </div>
+            <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Create Account</span>
+            </h6>
+          </div>
+          <div *ngIf="success" class="alert alert-success" role="alert">
+            {{success}}
+          </div>
+          <div class="card-content">
+
+            <div class="card-body">
+              <form class="form-horizontal" [formGroup]="register" (ngSubmit)="submit(register)">
+                <fieldset class="form-group position-relative has-icon-left">
+                  <input type="text" class="form-control" formControlName="name" id="user-name" placeholder="Your name" required="">
+                  <div class="form-control-position">
+                    <i class="la la-user"></i>
+                  </div>
+                </fieldset>
+                <div *ngIf="register.controls['name'].touched && register.controls['name'].errors != null" id="name" class="alert mt-2 alert-danger" role="alert">
+                  <p class="mb-0" *ngIf="register.controls['name'].errors['required']">Name is required</p>
+                </div>
+
+                <fieldset class="form-group position-relative has-icon-left">
+                  <input type="text" class="form-control" formControlName="email" id="user-email" placeholder="Your email" required="">
+                  <div class="form-control-position">
+                    <i class="la la-envelope"></i>
+                  </div>
+                </fieldset>
+                <div *ngIf="register.controls['email'].touched && register.controls['email'].errors != null" id="email" class="alert mt-2 alert-danger" role="alert">
+                  <p class="mb-0" *ngIf="register.controls['email'].errors['required']">Email is required</p>
+                  <p class="mb-0" *ngIf="register.controls['email'].errors['email']">Email must be valid</p>
+                </div>
+
+                <fieldset class="form-group position-relative has-icon-left">
+                  <input type="password" class="form-control" formControlName="password" id="user-password" placeholder="Enter Password" required="">
+                  <div class="form-control-position">
+                    <i class="la la-key"></i>
+                  </div>
+                </fieldset>
+                <div *ngIf="register.controls['password'].touched && register.controls['password'].errors != null" id="password" class="alert mt-2 alert-danger" role="alert">
+                  <p class="mb-0" *ngIf="register.controls['password'].errors['required']">Password is required</p>
+                </div>
+                <div *ngIf="error" class="alert alert-danger" role="alert">
+                  <strong>{{error}}</strong>
+                </div>
+                <button type="submit" [disabled]="!register.valid" class="btn btn-primary btn-lg btn-block"><i class="ft-unlock"></i> register</button>
+              </form>
+            </div>
+
+          </div>
+          <p class="text-center">Already have an account ? <a routerLink="/login" class="card-link">Login</a></p>
+
+        </div>
+      </div>
+    </div>
+  </section>

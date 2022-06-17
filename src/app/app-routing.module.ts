@@ -1,10 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './content/auth/login/login.component';
+import { RegisterComponent } from './content/auth/register/register.component';
+import { MoviesDetailsComponent } from './content/movies-details/movies-details.component';
+import { MoviesComponent } from './content/movies/movies.component';
+import { SearchbycategoryComponent } from './content/searchbycategory/searchbycategory.component';
+import { NotfoundComponent } from './content/shared/notfound/notfound.component';
+import { AuthGuard } from './guard/auth.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', redirectTo:'movies' ,pathMatch:'full'},
+  {path: 'movies', canActivate:[AuthGuard] , component: MoviesComponent},
+  {path: 'movie/:id', canActivate:[AuthGuard] , component: MoviesDetailsComponent},
+  {path: 'searchByCategory/:id', canActivate:[AuthGuard] , component: SearchbycategoryComponent},
+  {path: 'login',  component: LoginComponent},
+  {path: 'register',  component: RegisterComponent},
+  {path: '**',  component: NotfoundComponent},
+
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
