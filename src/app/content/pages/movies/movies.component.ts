@@ -26,7 +26,7 @@ export class MoviesComponent implements OnInit {
   config:any;
   page:any;
   currentPage = 1;
-
+  searchWord!: string;
   movieImage ='https://test-api.storexweb.com/';
   fullscreed: boolean = false;
   loading: boolean = false;
@@ -94,17 +94,18 @@ export class MoviesComponent implements OnInit {
         this.movies = response.message
         this.loading = false
 
-        console.log(response.message);
       }
       )
-      switch(deviceValue.target.value) {
-        case "all":
-        this.showMovies()
-        break;
+      // switch(deviceValue.target.value) {
+      //   case "all":
+      //   this.showMovies()
+      //   break;
 
-      }
+      // }
   }
-
+  onHandleAll(){
+    this.showMovies();
+  }
   // create movie
   onCreate(){
       this.loadingAction = true

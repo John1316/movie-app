@@ -21,6 +21,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CategoryComponent } from './content/pages/category/category.component';
 import { EditCategoryComponent } from './content/pages/category/edit-category/edit-category.component';
+import { SearchPipe } from './pipes/search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { EditCategoryComponent } from './content/pages/category/edit-category/ed
     LoadingComponent,
     MoviesDetailsComponent,
     CategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

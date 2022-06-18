@@ -18,6 +18,11 @@ $secondaryColor: #040404;
     background-color: $mainColor !important;
   }
 }
+.filtration {
+  select{
+    flex: 0 0 20% !important;
+  }
+}
 .text-primary {
   color: $secondaryColor !important
 }
