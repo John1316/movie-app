@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './content/auth/login/login.component';
 import { RegisterComponent } from './content/auth/register/register.component';
-import { MoviesComponent } from './content/movies/movies.component';
+import { MoviesComponent } from './content/pages/movies/movies.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { NavbarComponent } from './content/shared/navbar/navbar.component';
@@ -16,8 +16,7 @@ import { ActionLoaderComponent } from './content/shared/action-loader/action-loa
 import { FooterComponent } from './content/shared/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './content/shared/loading/loading.component';
-import { MoviesDetailsComponent } from './content/movies-details/movies-details.component';
-import { SearchbycategoryComponent } from './content/searchbycategory/searchbycategory.component';
+import { MoviesDetailsComponent } from './content/pages/movies-details/movies-details.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CategoryComponent } from './content/pages/category/category.component';
@@ -35,7 +34,6 @@ import { EditCategoryComponent } from './content/pages/category/edit-category/ed
     FooterComponent,
     LoadingComponent,
     MoviesDetailsComponent,
-    SearchbycategoryComponent,
     CategoryComponent,
     EditCategoryComponent
   ],

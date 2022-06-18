@@ -3,7 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Category } from 'src/app/models/category';
-import { movies } from 'src/app/models/movies';
 import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({

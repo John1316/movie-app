@@ -68,14 +68,14 @@ updateCategory = new FormGroup({
 
 // on update submit
 onUpdate(updateCategory:FormGroup){
+  this.loadingAction = true;
   this._CategoriesService.updateCategory(
     this.indexForNumbers,
     updateCategory.value
     ).subscribe(
       (response) =>{
-        this.loadingAction = true;
       if(response.status === 'success'){
-        this.success = 'Your movie updated successfully'
+        this.success = 'Your category updated successfully'
         this.error = ''
         this.loadingAction = false;
 
@@ -85,6 +85,8 @@ onUpdate(updateCategory:FormGroup){
       }
     }
     , error => {
+      this.loadingAction = false;
+
       console.log(error);
     }
   )

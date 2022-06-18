@@ -81,6 +81,7 @@ export class MoviesDetailsComponent implements OnInit {
 
 // on update submit
   onUpdate(){
+    this.loadingAction = true;
     this._MoviesService.updateMovie(
       this.indexForNumbers,
       this.updateMovie.value.name,
@@ -103,6 +104,8 @@ export class MoviesDetailsComponent implements OnInit {
         }
       }
       , error => {
+        this.loadingAction = false;
+
         console.log(error);
       }
     )

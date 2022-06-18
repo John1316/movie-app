@@ -30,19 +30,20 @@
           </div>
 
               <input id="name" class="form-control" type="hidden" name="_method" formControlName="_method" [ngModel]="_method">
+              <input id="image" class="form-control" type="hidden" name="image" formControlName="image" [ngModel]="movie?.image">
 
           <div class="col-md-4">
-            <div class="row align-items-center">
-              <div class="col-lg-10">
-                <div class="form-group">
-                  <label for="image">Image</label>
-                  <input id="image" (change)="image($event)" class="form-control" type="file" name="image" >
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input id="image" (change)="image($event)" class="form-control" type="file" name="image" >
+              <!-- <div class="row align-items-center">
+                <div class="col-lg-10">
                 </div>
 
               </div>
               <div class="col-lg-2">
                 <img height="50px" [src]="movieImage+movie?.image" alt="">
-              </div>
+              </div> -->
             </div>
           </div>
 

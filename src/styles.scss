@@ -9,6 +9,15 @@ $secondaryColor: #040404;
 .table td{
   display: table-cell;
 }
+.main-menu.menu-light .navigation .active>a{
+  border-right: 4px solid $mainColor !important
+  ;
+}
+.pace{
+  &-progress{
+    background-color: $mainColor !important;
+  }
+}
 .text-primary {
   color: $secondaryColor !important
 }

@@ -87,6 +87,24 @@ export class MoviesComponent implements OnInit {
   }
 
 
+  onChange(deviceValue:any) {
+    this.loading = true
+    this._CategoriesService.getSearchBycategory(deviceValue.target.value).subscribe(
+      (response) => {
+        this.movies = response.message
+        this.loading = false
+
+        console.log(response.message);
+      }
+      )
+      switch(deviceValue.target.value) {
+        case "all":
+        this.showMovies()
+        break;
+
+      }
+  }
+
   // create movie
   onCreate(){
       this.loadingAction = true
