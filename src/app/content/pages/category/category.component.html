@@ -54,7 +54,7 @@
                 <tbody>
                     <!-- loop starts here -->
 
-                    <tr *ngFor="let category of categoryContainer.reverse()| paginate: { itemsPerPage: 5, currentPage: page }">
+                    <tr *ngFor="let category of categoryContainer">
                         <td>{{category.id}}</td>
                         <td>{{category.name}}</td>
 
@@ -69,12 +69,7 @@
 
                 </tbody>
               </table>
-              <div class="row mt-2 justify-content-center" *ngIf="categoryContainer.length >= 5">
 
-              <pagination-controls [maxSize]="5"  (pageChange)="page = $event" >
-
-              </pagination-controls>
-              </div>
               <!-- if data doesn't exists -->
 
               <div class="text-center" *ngIf="categoryContainer.length <= 0">
