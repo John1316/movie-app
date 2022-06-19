@@ -21,7 +21,7 @@ export class MoviesComponent implements OnInit {
   error: string = '';
   delete: string = '';
   movies: movies[] =[];
-  errorMsg: string = '';
+  errorMsg: string[] =[];
   categoryContainer: Category[]= [];
   modalRef!: BsModalRef;
   config:any;
@@ -123,7 +123,6 @@ export class MoviesComponent implements OnInit {
             this.loadingAction = false
 
           }
-          console.log(response);
         }
       }
     )
@@ -156,7 +155,6 @@ export class MoviesComponent implements OnInit {
         }
       )
     }
-
 
 
 }

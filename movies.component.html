@@ -28,10 +28,13 @@
     </div>
     <div class="card-body">
       <!-- alerts -->
+      <ng-container *ngIf="errorMsg.length > 0">
 
-      <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
-        {{errorMsg}}
-      </div>
+        <div *ngFor="let error of errorMsg" class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      </ng-container>
+
       <div *ngIf="success" class="alert alert-success" role="alert">
         {{success}}
       </div>
@@ -47,7 +50,6 @@
             <div class="filtration input-group row no-gutters mb-3">
 
                 <select id="category" (change)="onChange($event)" class="form-control" name="category">
-                  <option disabled selected>Select Category</option>
                   <!-- loop starts here -->
                   <option [value]="category?.id" *ngFor="let category of categoryContainer">{{category.name}}</option>
                   <!-- loop end here -->

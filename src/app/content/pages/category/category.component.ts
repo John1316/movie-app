@@ -13,6 +13,7 @@ import { CategoriesService } from 'src/app/services/categories.service';
 export class CategoryComponent implements OnInit {
 
   pageName: string = 'Catgeories';
+  errorMsg: string = '';
   success: string = '';
   error: string = '';
   delete: string = '';
@@ -66,17 +67,23 @@ export class CategoryComponent implements OnInit {
     ).subscribe(
       (response) =>{
         if(response.status === 'success'){
-          this.success = 'Your category posted successfully'
-          this.error = ''
-          this.delete = ''
-          this.showCategories()
-          this.modalRef.hide()
-          this.loadingAction = false
+          this.success = 'Your category posted successfully';
+          this.error = '';
+          this.delete = '';
+          this.errorMsg = '';
+          this.showCategories();
+          this.modalRef.hide();
+          this.loadingAction = false;
 
           this.createCategory.reset();
         }else{
 
-          console.log(response);
+          if(response.status === 'failed'){
+            this.errorMsg = response.message.name;
+            this.modalRef.hide();
+            this.loadingAction = false
+
+          }
         }
       }
     )

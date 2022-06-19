@@ -18,7 +18,14 @@ $secondaryColor: #040404;
     background-color: $mainColor !important;
   }
 }
+
 .filtration {
+  @media screen and (max-width:600px) {
+    select{
+      flex: 0 0 50% !important;
+    }
+
+  }
   select{
     flex: 0 0 20% !important;
   }
