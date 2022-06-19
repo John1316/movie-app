@@ -38,7 +38,6 @@ export class MoviesComponent implements OnInit {
     private _MoviesService:MoviesService,
     private _Title:Title,
     private _CategoriesService:CategoriesService,
-    private _Router:Router ,
     public modalService: BsModalService  ) {
       this.config = {
         itemsPerPage: 5,
@@ -93,19 +92,9 @@ export class MoviesComponent implements OnInit {
       (response) => {
         this.movies = response.message
         this.loading = false
-
-      }
-      )
-      // switch(deviceValue.target.value) {
-      //   case "all":
-      //   this.showMovies()
-      //   break;
-
-      // }
+      })
   }
-  onHandleAll(){
-    this.showMovies();
-  }
+
   // create movie
   onCreate(){
       this.loadingAction = true
@@ -152,11 +141,7 @@ export class MoviesComponent implements OnInit {
       )
     }
   }
-    // search by category validation
-    searchByCategory = new FormGroup({
 
-      'category' : new FormControl('', Validators.required),
-    })
     // fetch categories
     showCategories(){
       this._CategoriesService.getAllCategories().subscribe(
@@ -165,10 +150,6 @@ export class MoviesComponent implements OnInit {
         }
       )
     }
-  // search function by category
-  onSearch(searchByCategory:FormGroup){
 
-    this._Router.navigateByUrl(`searchByCategory/${searchByCategory.value.category}`)
-  }
 
 }

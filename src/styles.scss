@@ -1,10 +1,10 @@
 $mainColor: #3a5563;
 $secondaryColor: #040404;
 
-.header-navbar a:not([href]):not([tabindex]),
-.header-navbar a:not([href]):not([tabindex]):focus,
-.header-navbar a:not([href]):not([tabindex]):hover {
-  color: #fff;
+.header-navbar .modern-nav-toggle,
+.header-navbar .modern-nav-toggle:focus,
+.header-navbar .modern-nav-toggle:hover {
+  color: #fff !important;
 }
 .table td{
   display: table-cell;

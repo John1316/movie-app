@@ -68,7 +68,7 @@
                 <tbody>
                     <!-- loop starts here -->
 
-                    <tr *ngFor="let movie of movies | search: searchWord">
+                    <tr *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: page } | search: searchWord">
                         <td>{{movie.id}}</td>
                         <td>{{movie.name}}</td>
                         <td *ngIf="movie.description.length > 140">{{movie.description | slice:0:140}} ...</td>
@@ -88,7 +88,13 @@
                 </tbody>
 
               </table>
+              <!-- pagination -->
+              <div class="row mt-2 justify-content-center" *ngIf="movies.length >= 5">
 
+                <pagination-controls [maxSize]="5"  (pageChange)="page = $event" >
+
+                </pagination-controls>
+                </div>
               <!-- if data doesn't exists -->
 
               <div class="text-center" *ngIf="movies.length <= 0">
