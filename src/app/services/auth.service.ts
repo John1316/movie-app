@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -26,12 +27,12 @@ export class AuthService {
 
 // login function
   login(formdata:string): Observable<any>{
-    return this._HttpClient.post(`${environment.apiUrl}login`,formdata )
+    return this._HttpClient.post<User[]>(`${environment.apiUrl}login`,formdata )
   }
   // register function
 
   register(formdata:string): Observable<any>{
-    return this._HttpClient.post(`${environment.apiUrl}register`,formdata )
+    return this._HttpClient.post<User[]>(`${environment.apiUrl}register`,formdata )
   }
 
     // signOut function
