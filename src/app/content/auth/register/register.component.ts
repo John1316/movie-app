@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit {
         // if status is success
         if (response.status === 'success') {
           //
-          this.success = response.message
+          this.success = response.message;
+          this.error = '';
           setTimeout(() => {
             this._Router.navigate(['/login']);
           }, 2000);
@@ -54,6 +55,7 @@ export class RegisterComponent implements OnInit {
 
         if (response.status === 'failed') {
           this.error = response.message.email[0];
+          this.success = '';
           this.actionLoader = false;
           // disable loader
 
