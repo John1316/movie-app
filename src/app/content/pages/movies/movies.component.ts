@@ -21,7 +21,6 @@ export class MoviesComponent implements OnInit {
   error: string = '';
   delete: string = '';
   movies: movies[] =[];
-  errorMsg: string = '';
   categoryContainer: Category[]= [];
   modalRef!: BsModalRef;
   config:any;
@@ -118,9 +117,13 @@ export class MoviesComponent implements OnInit {
           this.createMovie.reset();
         }else{
           if(response.status === 'failed'){
-            this.errorMsg = response.message.image;
+            this.error = response.message.image;
+            this.delete = '';
+            this.success = '';
             this.modalRef.hide();
-            this.loadingAction = false
+            this.loadingAction = false;
+            this.createMovie.reset();
+
 
           }
           console.log(response);

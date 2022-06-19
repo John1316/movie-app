@@ -13,7 +13,6 @@ import { CategoriesService } from 'src/app/services/categories.service';
 export class CategoryComponent implements OnInit {
 
   pageName: string = 'Catgeories';
-  errorMsg: string = '';
   success: string = '';
   error: string = '';
   delete: string = '';
@@ -70,7 +69,6 @@ export class CategoryComponent implements OnInit {
           this.success = 'Your category posted successfully';
           this.error = '';
           this.delete = '';
-          this.errorMsg = '';
           this.showCategories();
           this.modalRef.hide();
           this.loadingAction = false;
@@ -79,9 +77,13 @@ export class CategoryComponent implements OnInit {
         }else{
 
           if(response.status === 'failed'){
-            this.errorMsg = response.message.name;
+            this.error = response.message.name;
+            this.delete = '';
+            this.success = '';
             this.modalRef.hide();
-            this.loadingAction = false
+            this.loadingAction = false;
+            this.createCategory.reset();
+
 
           }
         }
