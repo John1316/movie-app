@@ -1,5 +1,6 @@
-# MovieTask
 
+# MovieTask
+To install nod_module you have to ## opend cmd and call ( npm i )
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
 ## Development server
