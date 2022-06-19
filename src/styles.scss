@@ -1,119 +1,17 @@
+// general
 $mainColor: #3a5563;
 $secondaryColor: #040404;
-
-.header-navbar .modern-nav-toggle,
-.header-navbar .modern-nav-toggle:focus,
-.header-navbar .modern-nav-toggle:hover {
-  color: #fff !important;
-}
-.table td{
-  display: table-cell;
-}
-.main-menu.menu-light .navigation .active>a{
-  border-right: 4px solid $mainColor !important
-  ;
-}
-.pace{
-  &-progress{
-    background-color: $mainColor !important;
-  }
-}
-
-.filtration {
-  select{
-    flex: 0 0 20% !important;
-  }
-  @media screen and (max-width:600px) {
-    select{
-      flex: 0 0 50% !important;
-    }
-
-  }
-}
 .text-primary {
   color: $secondaryColor !important
-}
-
-.main-menu.menu-dark .navigation>li.active>a {
-  border-right: 4px solid $mainColor;
-  margin: 0 !important;
-
-}
-
-.login_box {
-  .card-title {
-    i {
-      font-size: 40px;
-    }
-  }
-}
-
-.gallery_modal {
-  img {
-    height: 500px;
-    object-fit: contain;
-  }
 }
 
 .btn-light:focus {
   color: #040404 !important
 }
-
-.card-header {
-  h3 {
-    color: #fff
-  }
-
-  .btn-light {
-    color: #040404
-  }
-}
-
 .bg-primary.bg-darken-2,
 .btn-primary.btn-darken-2 {
   background-color: $mainColor !important;
 }
-
-.navigation {
-  &-main {
-    margin-top: 18px !important
-  }
-}
-
-.table td,
-.table th {
-  vertical-align: middle;
-}
-
-.slider {
-  h4 {
-    text-align: center
-  }
-}
-
-.main_slider_img {
-  height: 200px !important;
-  width: 200px !important;
-  margin: auto;
-  object-fit: contain;
-}
-
-.home-dashboard {
-  h3 {
-    margin-bottom: 5px;
-  }
-
-  h4 {
-    margin-bottom: 0;
-  }
-}
-
-.modal {
-  &-title {
-    margin-bottom: 0 !important;
-  }
-}
-
 .btn-primary {
   background-color: $mainColor !important;
   border-color: #fff !important;
@@ -131,12 +29,116 @@ $secondaryColor: #040404;
   }
 }
 
-.image_card_home {
-  height: 250px;
-  object-fit: contain;
-  width: auto;
+
+
+// body
+body.vertical-layout.vertical-menu-modern .content {
+  position: relative;
+}
+// header
+
+@media screen and (min-width:1024px) {
+
+  .header-navbar .modern-nav-toggle,
+  .header-navbar .modern-nav-toggle:focus,
+  .header-navbar .modern-nav-toggle:hover {
+    color: #fff !important;
+  }
+}
+@media screen and (max-width:1024px) {
+
+  .navbar-semi-light .navbar-nav .nav-link{
+    color: #040404;
+  }
 }
 
+.header-navbar .navbar-header {
+  padding: 4px 14px
+}
+.navigation {
+  &-main {
+    margin-top: 18px !important
+  }
+}
+// sidebar
+.main-menu.menu-light .navigation .active>a{
+  border-right: 4px solid $mainColor !important
+  ;
+}
+.main-menu.menu-dark .navigation>li.active>a {
+  border-right: 4px solid $mainColor;
+  margin: 0 !important;
+
+}
+// table
+.table td{
+  display: table-cell;
+}
+.table td,
+.table th {
+  vertical-align: middle;
+}
+// pace
+.pace{
+  &-progress{
+    background-color: $mainColor !important;
+  }
+}
+// filter section
+.filtration {
+  select{
+    flex: 0 0 20% !important;
+  }
+  @media screen and (max-width:600px) {
+    select{
+      flex: 0 0 50% !important;
+    }
+
+  }
+}
+
+
+
+// login box
+.login_box {
+  .card-title {
+    i {
+      font-size: 40px;
+    }
+  }
+}
+// gallery modal
+.gallery_modal {
+  img {
+    height: 500px;
+    object-fit: contain;
+  }
+}
+
+// cards
+.card-header {
+  h3 {
+    color: #fff
+  }
+
+  .btn-light {
+    color: #040404
+  }
+}
+
+
+
+
+
+.modal {
+  &-title {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+
+// loader
 .loader {
   position: fixed;
   inset: 0;
@@ -187,9 +189,7 @@ $secondaryColor: #040404;
 
 }
 
-body.vertical-layout.vertical-menu-modern .content {
-  position: relative;
-}
+
 
 .loading {
   &_data {
@@ -236,10 +236,7 @@ body.vertical-layout.vertical-menu-modern .content {
   }
 }
 
-.header-navbar .navbar-header {
-  padding: 4px 14px
-}
-
+// dropdown
 .dropdown-user:hover {
   position: relative;
 }
@@ -253,16 +250,14 @@ body.vertical-layout.vertical-menu-modern .content {
 .dropdown-menu-user {
   position: absolute
 }
-
+// actions
 .action {
 
   &_minwidth {
     min-width: 181px;
   }
 
-  &_slider {
-    padding: 1.6rem 0 !important;
-  }
+
 
   &_banner {
     padding: 1.6rem 0 !important;
@@ -320,7 +315,7 @@ body.vertical-layout.vertical-menu-modern .content {
     transform: rotate(360deg);
   }
 }
-
+// pagination
 .ngx-pagination {
   padding-left: 0;
 
@@ -332,17 +327,17 @@ body.vertical-layout.vertical-menu-modern .content {
     color: $mainColor
   }
 }
-
+// footer
 footer {
   a {
     color: $secondaryColor !important
   }
 }
-
+// notfound
 .notfound {
   min-height: 75vh;
 }
-
+// animation
 
 @-webkit-keyframes flip-vertical-left {
   0% {
