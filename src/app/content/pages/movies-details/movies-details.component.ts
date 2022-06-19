@@ -51,7 +51,7 @@ export class MoviesDetailsComponent implements OnInit {
     this._MoviesService.getMovieDetails(this.indexForNumbers).subscribe(
       (response) => {
         this.movie = response.message
-        this._Title.setTitle(`Task | ${response.message.name}`)
+        this._Title.setTitle(`Movies cave | ${response.message.name}`)
         this.loading = false;
 
       }

@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     'password': new FormControl('', Validators.required),
   })
   ngOnInit(): void {
-    this._Title.setTitle(`Task | register`)
+    this._Title.setTitle(`Movies cave | Register`)
 
   }
   // submit form

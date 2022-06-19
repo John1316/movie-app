@@ -40,7 +40,7 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.showCategories();
-    this._Title.setTitle(`Task | Catgeory`)
+    this._Title.setTitle(`Movies cave | Catgeory`)
 
   }
   // create movie validation

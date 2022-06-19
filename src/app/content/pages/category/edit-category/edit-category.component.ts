@@ -49,7 +49,7 @@ getDetails(){
   this._CategoriesService.getCategorydetails(this.indexForNumbers).subscribe(
     (response) => {
       this.category = response.message
-      this._Title.setTitle(`Task | ${response.message.name}`)
+      this._Title.setTitle(`Movies cave | ${response.message.name}`)
       this.loading = false;
 
     }

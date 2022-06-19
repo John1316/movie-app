@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     'password': new FormControl('', Validators.required),
   })
   ngOnInit(): void {
-    this._Title.setTitle(`Task | Login`);
+    this._Title.setTitle(`Movies cave | Login`);
     // if he is logined already redirect to movies page
     if (localStorage.getItem('currentUserToken')) {
       this._Router.navigate(['/movies'])

@@ -48,7 +48,7 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
     this.showMovies();
     this.showCategories();
-    this._Title.setTitle(`Task | movies`)
+    this._Title.setTitle(`Movies cave | Movies`)
 
   }
   // create movie validation
